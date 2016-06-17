@@ -1,0 +1,38 @@
+{
+  "name": "@romainberger/css-diff",
+  "version": "1.0.0",
+  "description": "Get the diff between two css",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "test": "mocha --compilers js:babel-register test/*.js",
+    "prepublish": "npm run build"
+  },
+  "author": "Romain Berger <romain@romainberger.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romainberger/css-diff"
+  },
+  "bugs": {
+    "url": "https://github.com/romainberger/css-diff"
+  },
+  "homepage": "https://github.com/dailymotion/css-diff",
+  "keywords": [
+    "css",
+    "diff"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-flow-strip-types": "^6.7.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.7.2",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "postcss": "^5.0.21"
+  }
+}
