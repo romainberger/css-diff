@@ -1,35 +1,34 @@
-# NPM Module Boilerplate [![Build Status](https://img.shields.io/travis/romainberger/npm-module-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/romainberger/npm-module-boilerplate)
+# CSS Diff [![Build Status](https://img.shields.io/travis/romainberger/css-diff/master.svg?style=flat-square)](https://travis-ci.org/romainberger/css-diff)
 
-Personal boilerplate for modules.
+Get the diff between two css.
 
-Includes:
-
-* [Babel](https://babeljs.io/) stage 0
-* [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) for testing
-* [Flow](http://flowtype.org/) for static type checking
-* [Travis CI](https://travis-ci.com/) for continuous integration
-
-## New project initialization
+## Installation
 
 ```shell
-$ git clone
-$ mv npm-module-boilerplate awesome-module
-$ cd awesome-module
-$ rm -rf .git
-$ git init
-$ npm install
+$ npm install @romainberger/css-diff
 ```
 
 ## Usage
 
-Run tests:
+```js
+const cssDiff = require('@romainberger/css-diff')
 
-```shell
-$ npm test
-```
+const cssA = `
+body {
+  background: white;
+  color: red;
+}
+`
 
-Run flow
+const cssB = `
+body {
+  background: white;
+  color: blue;
+}
+`
 
-```shell
-$ npm run flow
+const diff = cssDiff(cssA, cssB)
+// body {
+//   color: blue;
+// }
 ```
