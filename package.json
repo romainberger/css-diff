@@ -1,6 +1,6 @@
 {
   "name": "@romainberger/css-diff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get the diff between two css",
   "main": "lib/index.js",
   "scripts": {
