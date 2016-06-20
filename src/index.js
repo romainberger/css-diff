@@ -1,6 +1,11 @@
 import {parse} from 'postcss'
 
 module.exports = function(source, reversed) {
+  try {
+    source = JSON.parse(source)
+    reversed = JSON.parse(reversed)
+  }
+  catch (e) {}
   const sourceAst = parse(source)
   const reversedAst = parse(reversed)
   const totalNodes = reversedAst.nodes.length
