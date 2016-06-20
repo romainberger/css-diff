@@ -1,11 +1,15 @@
 import {parse} from 'postcss'
 
 module.exports = function(source, reversed) {
+  var isStringified = false
+
   try {
     source = JSON.parse(source)
     reversed = JSON.parse(reversed)
+    isStringified = true
   }
   catch (e) {}
+
   const sourceAst = parse(source)
   const reversedAst = parse(reversed)
   const totalNodes = reversedAst.nodes.length
@@ -32,6 +36,10 @@ module.exports = function(source, reversed) {
     if (isAdded) {
       diff += `}\n`
     }
+  }
+
+  if (isStringified) {
+    diff = JSON.stringify(diff)
   }
 
   return diff

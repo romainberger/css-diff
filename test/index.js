@@ -17,12 +17,12 @@ describe('Diff', () => {
     expect(output).to.equal(expected)
   })
 
-  it('should work with stringified css', () => {
+  it('should work with stringified css and should return a stringified version back', () => {
     const source = JSON.stringify(fs.readFileSync(sourcePath, 'utf-8'))
     const reversed = JSON.stringify(fs.readFileSync(reversedPath, 'utf-8'))
     const expected = fs.readFileSync(resultPath, 'utf-8')
 
     const output = diff(source, reversed)
-    expect(output).to.equal(expected)
+    expect(output).to.equal(JSON.stringify(expected))
   })
 })
