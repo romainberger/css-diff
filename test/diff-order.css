@@ -1,0 +1,17 @@
+body {
+  width: 200px;
+  background: red;
+}
+
+.bar {
+  color: black;
+}
+
+.foo {
+  border: 2px;
+  left: 10px;
+}
+
+.bar {
+  border-right: 20px;
+}
