@@ -68,7 +68,7 @@ const cssDiff = (source, reversed) => {
 
   Object.keys(reversedObject).forEach(selector => {
     Object.keys(reversedObject[selector]).forEach(prop => {
-      if (sourceObject[selector][prop]) {
+      if ((sourceObject[selector] || {})[prop]) {
         if (sourceObject[selector][prop] !== reversedObject[selector][prop]) {
           diff = addProp(diff, selector, prop, reversedObject[selector][prop])
         }
